@@ -1,0 +1,23 @@
+# Common junk dotfiles to ignore
+.DS_Store
+.envrc
+Thumbs.db
+*.swp
+
+# VSCode / IDE configs
+.vscode/
+.idea/
+
+# Node/Python/other generated files
+*.log
+*.pyc
+__pycache__/
+
+# Ignore local virtual environments
+.venv/
+venv/
+app/.venv/
+
+#macOS Finder meta
+.DS_store
+._*

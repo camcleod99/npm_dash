@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>{{ TITLE }}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+<body>
+  <h1>{{ TITLE }}</h1>
+  <ul>
+    {% for url, label in url_directory %}
+      <li><a href="http://{{ url }}" target="_blank">{{ label }}</a></li>
+    {% endfor %}
+  </ul>
+</body>
+</html>

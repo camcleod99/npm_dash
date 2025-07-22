@@ -1,0 +1,15 @@
+## Notes
+## - Link to /DATA/AppData/nginxproxymanager/data/database.sqlite for the database
+
+services:
+  npm_dash:
+    build: .
+    container_name: npm_dash
+    ports:
+      - "6565:5555"
+    volumes:
+      # App Data
+      - /DATA/AppData/npm_dash/:/config
+      # NginexPM Data (The Database)
+      - /DATA/AppData/nginxproxymanager/data/:/data:ro
+    restart: unless-stopped    

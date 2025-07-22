@@ -1,0 +1,9 @@
+  {
+    "url":"npm.home",
+    "label":"Nginex Proxy Manager",
+    "hide":false
+  },             
+  {
+    "url":"ab.home",
+    "hide":true
+  }
