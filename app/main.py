@@ -8,14 +8,16 @@ app = Flask(__name__)
 
 DB_PATH = "/data/database.sqlite"
 CONFIG_PATH = "/config/sites.json"
-TITLE = "List of Porxies"
+TITLE = "Wondercave - Welcome To The HomeServer!"
+TITLE_PROXY = "List of Services"
+TITLE_SYSTEM = "System"
 
 def get_data():
     urls = []
     try:
         conn = sqlite3.connect(DB_PATH)
         cursor = conn.cursor()
-        cursor.execute("SELECT domain_names FROM proxy_host WHERE enabled = 1;")
+        cursor.execute("SELECT domain_names FROM proxy_host WHERE enabled = 1 AND (is_deleted IS NULL OR is_deleted = 0);")
         rows = cursor.fetchall()
         conn.close()
     except Exception as e:
@@ -59,7 +61,11 @@ def index():
         label = entry.get("label") if entry else url
         url_directory.append((url, label))
 
-    return render_template("index.html", TITLE=TITLE, url_directory=url_directory)
+    return render_template("index.html", 
+        TITLE=TITLE,  
+        TITLE_PROXY=TITLE_PROXY,
+        TITLE_SYSTEM=TITLE_SYSTEM,
+        url_directory=url_directory)
 
 
 def main():

@@ -1,3 +1,4 @@
+<!-- PH082 -->
 # NPM Dashboard
 
 A simple Flask-based dashboard that reads from your Nginx Proxy Manager (NPM) SQLite database and shows active proxy domains in a web UI.
@@ -22,11 +23,16 @@ By default, this setup expects:
 Make sure those paths exist and contain the expected files before launching the container.
 
 ### Example Config (sites.json)
+Note; please delete the comment lines as json does not support comments
 
-[
+```
+[ 
+  # Will change the text of the link to the label
   { "url": "internal.example.com", "label": "Internal Site", "hide": false },
+  # Will Hide the link completely
   { "url": "test.example.com", "hide": true }
 ]
+```
 
 ## 🐳 Running the App
 
@@ -35,8 +41,8 @@ docker compose up -d --build
 Then visit:
 
 `http://your-server-ip:6565`
-`
-⚠️ Use http:// — not https:// — unless you’ve added a reverse proxy.
+
+⚠️ Use http:// — not https:// — unless you’ve added a reverse proxy with a SSL Setup.
 
 ## 🛠️ Notes
 

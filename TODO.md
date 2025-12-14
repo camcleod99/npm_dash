@@ -3,4 +3,7 @@
 
 [X] Docker Setup
 
-[ ] git and host
+[X] git and host
+
+[x]  Fix README
+    [x] Project Structure

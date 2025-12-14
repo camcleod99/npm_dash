@@ -7,10 +7,16 @@
 </head>
 <body>
   <h1>{{ TITLE }}</h1>
+  <h2>{{ TITLE_PROXY }}</h2>
   <ul>
     {% for url, label in url_directory %}
       <li><a href="http://{{ url }}" target="_blank">{{ label }}</a></li>
     {% endfor %}
+  </ul>
+  <h2>{{ TITLE_SYSTEM }}</h2>
+  <ul>
+    <li><a href="http://192.168.8.1/#/login" target="_blank">Router</a></li>
+    <li><a href="http://192.168.8.144:90/#/login" target="_blank">Casa OS Backend</a></li>
   </ul>
 </body>
 </html>
